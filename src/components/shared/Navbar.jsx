@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import logo from "../../assets/logo.png";
+// import logo from "../../assets/logo.png";
 
 
 const Navbar = () => {
@@ -10,7 +10,7 @@ const Navbar = () => {
 
         {/* Logo + Name */}
         <div>
-          <Image src={logo} alt="Logo" width={250} height={250} />
+          <Image src="/logo.png" alt="Logo" width={250} height={250} />
         </div>
 
         {/* Nav Links - hidden on mobile */}
