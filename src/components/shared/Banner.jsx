@@ -1,63 +1,100 @@
-import { Separator } from "@heroui/react";
+"use client";
 
-const Banner = () => {
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Button } from "@heroui/react";
+
+export default function Banner() {
   return (
-    <div className="bg-teal-300 text-black  flex justify-between flex-col items-center  gap-5 h-150">
-      <div className="p-10 text-center flex justify-center flex-col items-center gap-3.5 flex-1">
-        <h1 className="text-7xl">
-          Find doctors, book appointments, <br /> and manage your health
-        </h1>
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      slidesPerView={1}
+      loop={true}
+      autoplay={{
+        delay: 3000,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      className="h-[500px]"
+    >
+      <SwiperSlide>
+        <div
+          className="relative h-[500px] bg-cover bg-center flex items-center justify-center"
+          style={{
+            backgroundImage: "url('/banner1.png')",
+          }}
+        >
+          {/* banner image blur er jonno */}
+          <div className="absolute inset-0 bg-black/50"></div>
 
-        <p className="text-2xl">
-          Search for specialists, view availability, and book appointments in just a few steps. Manage all your bookings in one place.
-        </p>
 
-        <div className="flex gap-5">
-          <button className="uppercase bg-cyan-500 px-5 py-3 cursor-pointer">
-            Explore Now
-          </button>
+          <div className="relative flex flex-col items-center text-center text-white">
+            <h1 className="text-5xl font-bold mb-3">
+              Find & Book Trusted Doctors
+            </h1>
+            <p>Manage your health records and bookings in one place</p>
+            <div className="my-3 flex gap-3">
+              <Button className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800">Get Started</Button>
+              <Button className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800">Find Doctors</Button>
+            </div>
+          </div>
 
-          <button className="uppercase px-5 py-3 bg-white/50 cursor-pointer">
-            View Destination
-          </button>
         </div>
-      </div>
+      </SwiperSlide>
 
-      <div className=" bg-white/30 flex justify-between gap-5 w-full items-center">
-        <div className="px-3">
-          <h3 className="text-sm">Location</h3>
-          <p className="text-xs">Address, City or Zip</p>
+      <SwiperSlide>
+        <div
+          className="relative h-[500px] bg-cover bg-center flex items-center justify-center"
+          style={{
+            backgroundImage: "url('/banner2.png')",
+          }}
+        >
+          {/* banner image blur er jonno */}
+          <div className="absolute inset-0 bg-black/50"></div>
+
+
+          <div className="relative flex flex-col items-center text-center text-white">
+            <h1 className="text-5xl font-bold mb-3">
+              Your Health, Our Priority
+            </h1>
+            <p>Schedule appointments with top doctors anytime, anywhere</p>
+            <div className="my-3 flex gap-3">
+              <Button className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800">Get Started</Button>
+              <Button className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800">Find Doctors</Button>
+            </div>
+          </div>
         </div>
+      </SwiperSlide>
 
-        <Separator variant="tertiary" orientation="vertical" />
+      <SwiperSlide>
+        <div
+          className="relative h-[500px] bg-cover bg-center flex items-center justify-center"
+          style={{
+            backgroundImage: "url('/banner3.jpg')",
+          }}
+        >
+          {/* banner image blur er jonno */}
+          <div className="absolute inset-0 bg-black/50"></div>
 
-        <div>
-          <h3 className="text-sm">Date/Duration</h3>
-          <p className="text-xs">Anytime/3 Days</p>
+
+          <div className="relative flex flex-col items-center text-center text-white">
+            <h1 className="text-5xl font-bold mb-3">
+              Fast & Easy Doctor Appointment System
+            </h1>
+            <p>Trusted healthcare professionals at your fingertips</p>
+            <div className="my-3 flex gap-3">
+              <Button className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800">Get Started</Button>
+              <Button className="bg-teal-700 text-white px-6 py-3 rounded-md hover:bg-teal-800">Find Doctors</Button>
+            </div>
+          </div>
         </div>
-
-        <Separator variant="tertiary" orientation="vertical" />
-
-        <div>
-          <h3 className="text-sm">Budget</h3>
-          <p className="text-xs">$0-$3000</p>
-        </div>
-
-        <Separator variant="tertiary" orientation="vertical" />
-
-        <div>
-          <h3 className="text-sm">People</h3>
-          <p className="text-xs">5-10</p>
-        </div>
-
-
-
-        <div className="bg-cyan-500 py-2 px-4">
-          <h3>Search</h3>
-        </div>
-      </div>
-    </div>
+      </SwiperSlide>
+    </Swiper>
   );
-};
-
-export default Banner;
+}
