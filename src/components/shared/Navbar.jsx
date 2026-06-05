@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 // import logo from "../../assets/logo.png";
 
@@ -15,9 +16,9 @@ const Navbar = () => {
 
         {/* Nav Links - hidden on mobile */}
         <div className="hidden md:flex items-center gap-6 ">
-          <a href="#" className="text-sm font-medium text-white hover:text-teal-200">Home</a>
+          <Link href={"/"} className="text-sm font-medium text-white hover:text-teal-200">Home</Link>
           <a href="#" className="text-sm font-medium text-white hover:text-teal-200">All Appointment</a>
-          <a href="#" className="text-sm font-medium text-white hover:text-teal-200">Dashboard</a>
+          <Link href={"/appoint-booking"} className="text-sm font-medium text-white hover:text-teal-200">Appoint Booking</Link>
         </div>
 
         {/* Auth Buttons */}
