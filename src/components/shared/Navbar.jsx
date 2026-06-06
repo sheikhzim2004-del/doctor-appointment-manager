@@ -19,6 +19,7 @@ const Navbar = () => {
           <Link href={"/"} className="text-sm font-medium text-white hover:text-teal-200">Home</Link>
           <a href="#" className="text-sm font-medium text-white hover:text-teal-200">All Appointment</a>
           <Link href={"/appoint-booking"} className="text-sm font-medium text-white hover:text-teal-200">Appoint Booking</Link>
+          <Link href={"/doctors"} className="text-sm font-medium text-white hover:text-teal-200">Doctors</Link>
         </div>
 
         {/* Auth Buttons */}
