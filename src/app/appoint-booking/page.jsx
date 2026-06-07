@@ -52,7 +52,7 @@ const AppointBookingPage = () => {
         <div className='max-w-3xl mx-auto px-4 py-8'>
             <Toaster position="top-right" />
             {/* fomr er title */}
-            <div className="mb-4 text-center">
+            <div className="mb-2 text-center">
                 <p className="text-sm font-medium text-cyan-500 uppercase tracking-widest mb-1">Healthcare Services</p>
                 <h1 className="text-3xl font-bold text-gray-800">
                     Book an <span className="text-cyan-500">Appointment</span>

@@ -17,9 +17,9 @@ const Navbar = () => {
         {/* Nav Links - hidden on mobile */}
         <div className="hidden md:flex items-center gap-6 ">
           <Link href={"/"} className="text-sm font-medium text-white hover:text-teal-200">Home</Link>
+          <Link href={"/doctors"} className="text-sm font-medium text-white hover:text-teal-200">Doctors</Link>
           <a href="#" className="text-sm font-medium text-white hover:text-teal-200">All Appointment</a>
           <Link href={"/appoint-booking"} className="text-sm font-medium text-white hover:text-teal-200">Appoint Booking</Link>
-          <Link href={"/doctors"} className="text-sm font-medium text-white hover:text-teal-200">Doctors</Link>
         </div>
 
         {/* Auth Buttons */}
@@ -32,9 +32,10 @@ const Navbar = () => {
 
       {/* Mobile Nav Links */}
       <div className="md:hidden flex gap-5 mt-3 border-t text-white border-gray-100 pt-3">
-        <a href="#" className="text-sm font-medium text-white hover:text-teal-200">Home</a>
+        <Link href={"/"} className="text-sm font-medium text-white hover:text-teal-200">Home</Link>
+        <Link href={"/doctors"} className="text-sm font-medium text-white hover:text-teal-200">Doctors</Link>
         <a href="#" className="text-sm font-medium text-white hover:text-teal-200">All Appointment</a>
-        <a href="#" className="text-sm font-medium text-white hover:text-teal-200">Dashboard</a>
+        <Link href={"/appoint-booking"} className="text-sm font-medium text-white hover:text-teal-200">Appoint Booking</Link>
       </div>
     </nav>
   );
