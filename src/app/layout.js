@@ -2,6 +2,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import { ToastContainer } from "react-toastify";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -22,8 +23,12 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col bg-teal-100">
         <Navbar></Navbar>
         {children}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+        />
         <Footer></Footer>
-        </body>
+      </body>
     </html>
   );
 }

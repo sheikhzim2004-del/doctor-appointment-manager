@@ -3,11 +3,12 @@
 import { FieldError, Input, Label, TextField, Select, ListBox, Button } from '@heroui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import { toast } from 'react-toastify';
+// import toast, { Toaster } from 'react-hot-toast';
 
 const AppointBookingPage = () => {
 
-    const [gender, setGender] = useState('');
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
@@ -41,7 +42,6 @@ const AppointBookingPage = () => {
 
             toast.success('Appointment booked successfully!');
             e.target.reset();
-            setGender('');
         } catch (err) {
             toast.error('Something went wrong. Try again.');
         } finally {
@@ -93,8 +93,8 @@ const AppointBookingPage = () => {
                                 isRequired
                                 className="w-full"
                                 placeholder="Select gender"
-                                selectedKey={gender}
-                                onSelectionChange={setGender}
+                                // selectedKey={gender}
+                                // onSelectionChange={setGender}
                             >
                                 <Label>Gender</Label>
                                 <Select.Trigger className="rounded-xl">

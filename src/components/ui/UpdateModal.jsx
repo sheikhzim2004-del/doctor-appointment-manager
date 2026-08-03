@@ -3,8 +3,9 @@ import { Button, FieldError, Input, Label, ListBox, Modal, Surface, TextField, S
 import { EditIcon } from 'lucide-react';
 import { redirect } from 'next/navigation';
 import React from 'react';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import { FiEdit2 } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 
 
 
@@ -31,9 +32,8 @@ const UpdateModal = ({ appointment }) => {
             const data = await res.json()
             console.log(data, 'data')
 
-            toast.success('Appointment booked successfully!');
+            toast.success('Appointment Updated successfully!');
             e.target.reset();
-            // setGender('');
         } catch (err) {
             toast.error('Something went wrong. Try again.');
         } finally {

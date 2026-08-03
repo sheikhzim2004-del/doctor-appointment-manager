@@ -97,7 +97,7 @@ const AppointmentCard = ({ appointment }) => {
         <div className="flex-1 w-full">
           <UpdateModal appointment={appointment}></UpdateModal>
         </div>
-        <DeleteDialog className=""></DeleteDialog>
+        <DeleteDialog appointment={appointment}></DeleteDialog>
       </div>
     </div>
   );
