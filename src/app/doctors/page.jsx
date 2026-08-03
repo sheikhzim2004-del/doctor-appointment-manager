@@ -1,4 +1,4 @@
-import DoctorCard from '@/components/shared/ui/DoctorCard';
+import DoctorCard from '@/components/ui/DoctorCard';
 import React from 'react';
 
 const DoctorsPage = async () => {

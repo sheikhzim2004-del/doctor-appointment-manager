@@ -1,7 +1,9 @@
 import { FiEdit2, FiX, FiUser, FiMail, FiPhone, FiCalendar, FiClock, FiArrowRight, FiCheckCircle } from "react-icons/fi";
 import { IoMaleOutline } from "react-icons/io5";
+import UpdateModal from "./UpdateModal";
+import DeleteDialog from "./DeleteDialog";
 
-const AppointmentCard = ({ appointment, onEdit, onCancel }) => {
+const AppointmentCard = ({ appointment }) => {
   const { patientName, userEmail, phone, gender, doctorName, appointmentTime, appointmentDate } = appointment;
 
   const formatDate = (d) => new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
@@ -13,7 +15,9 @@ const AppointmentCard = ({ appointment, onEdit, onCancel }) => {
     { icon: <IoMaleOutline />, label: "Gender", value: gender },
   ];
 
-  const getInitials = (name) => name.split(" ").filter(Boolean).slice(0, 2).map(n => n[0]).join("").toUpperCase();
+  const getInitials = (patientName) => (patientName || "").split(" ").filter(Boolean).slice(0, 2).map(n => n[0]).join("").toUpperCase();
+
+
 
   return (
     <div className="bg-white rounded-[20px] border border-[#E2E8F0] overflow-hidden w-full">
@@ -84,32 +88,16 @@ const AppointmentCard = ({ appointment, onEdit, onCancel }) => {
             Available
           </span>
         </div>
-
-        {/* Schedule */}
-        <SectionLabel>Schedule</SectionLabel>
-        <div className="grid grid-cols-2 gap-2">
-          {[
-            { icon: <FiCalendar className="text-white text-lg" />, label: "Appointment date", value: formatDate(appointmentDate) },
-            { icon: <FiClock className="text-white text-lg" />, label: "Appointment time", value: appointmentTime },
-          ].map(({ icon, label, value }) => (
-            <div key={label} className="flex items-center gap-3 p-3.5 rounded-xl border border-[#E2E8F0] bg-[#F8FAFC] hover:bg-[#F0FDFA] hover:border-[#0F766E] hover:-translate-y-0.5 transition-all duration-150 cursor-default">
-              <div className="w-9 h-9 rounded-[10px] bg-[#0F766E] hover:bg-[#115E59] flex items-center justify-center flex-shrink-0 transition-colors">
-                {icon}
-              </div>
-              <div>
-                <p className="text-[10px] text-[#94A3B8] m-0 mb-0.5">{label}</p>
-                <p className="text-[14px] text-[#0F172A] font-medium m-0">{value}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
+
+
       {/* Footer */}
-      <div className="px-7 py-4 border-t border-[#E2E8F0] flex gap-3">
-        <button onClick={onEdit} className="flex-1 bg-[#0F766E] hover:bg-[#115E59] active:scale-[0.97] text-white rounded-[11px] py-3 text-sm font-medium flex items-center justify-center gap-2 transition-all duration-150">
-          <FiEdit2 size={14} /> Edit appointment
-        </button>
+      <div className="flex mb-4 mx-2 gap-2 items-center">
+        <div className="flex-1 w-full">
+          <UpdateModal appointment={appointment}></UpdateModal>
+        </div>
+        <DeleteDialog className=""></DeleteDialog>
       </div>
     </div>
   );

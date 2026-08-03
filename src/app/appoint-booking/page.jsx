@@ -1,6 +1,7 @@
 "use client"
 
 import { FieldError, Input, Label, TextField, Select, ListBox, Button } from '@heroui/react';
+import Link from 'next/link';
 import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -12,9 +13,8 @@ const AppointBookingPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const appointment = Object.fromEntries(formData.entries())
+        const appointment = Object.fromEntries(formData.entries());
         console.log("appoint data:", appointment)
-
 
 
         // const payload = {
@@ -32,12 +32,13 @@ const AppointBookingPage = () => {
             const res = await fetch("http://localhost:8080/appoint", {
                 method: "POST",
                 headers: {
-                    'Content-type': 'application/json'
+                    'content-type': 'application/json'
                 },
                 body: JSON.stringify(appointment)
             })
             const data = await res.json()
-            console.log(data)
+            console.log(data, 'data')
+
             toast.success('Appointment booked successfully!');
             e.target.reset();
             setGender('');
@@ -193,6 +194,11 @@ const AppointBookingPage = () => {
                     >
                         {loading ? 'Booking...' : 'Book Appointment'}
                     </Button>
+                    <Link 
+                    href={"/all-appoint"} 
+                    className="flex justify-center rounded-xl bg-none font-medium">
+                        <Button className="bg-white text-blue-900 hover:underline text-md"> Check My Appoint</Button>
+                    </Link>
                 </form>
             </div>
         </div>

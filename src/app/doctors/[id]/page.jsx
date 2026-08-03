@@ -1,9 +1,9 @@
-import DoctorDetailsClient from '@/components/shared/ui/DoctorDetailsClient';
+import DoctorDetailsClient from '@/components/ui/DoctorDetailsClient';
 import React from 'react';
 
 const DoctorDetailsPage = async ({ params }) => {
     const { id } = await params;
-    console.log("Id",id)
+    console.log("Id", id)
 
     const res = await fetch(`http://localhost:8080/doctors/${id}`, {
         cache: "no-store"
