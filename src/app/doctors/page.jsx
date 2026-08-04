@@ -18,7 +18,7 @@ const DoctorsPage = async () => {
 
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* All Doctors Section Header */}
       <div className="text-center mb-6">
         <p className="text-sm font-semibold uppercase tracking-widest text-teal-600 mb-2">
