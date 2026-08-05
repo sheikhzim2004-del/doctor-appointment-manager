@@ -13,7 +13,7 @@ const RatedDoctor = async () => {
     return (
         <div>
             <div className="text-center max-w-3xl mx-auto my-14">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#CCFBF1] mb-4">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-4">
                     <span className="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse" />
                     <p className="text-xs md:text-sm uppercase tracking-widest text-[#0F766E] font-bold">
                         Top Rated Doctors
@@ -21,10 +21,10 @@ const RatedDoctor = async () => {
                 </div>
 
                 <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                    <span className="bg-gradient-to-r from-[#0891B2] via-[#0891B2] to-[#0891B2] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#0F766E] via-[#14B8A6] to-[#0F766E] bg-clip-text text-transparent">
                         Meet Our{" "}
                     </span>
-                    <span className="bg-gradient-to-r from-[#0891B2] via-[#06B6D4] to-[#D97706] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#0F766E] via-[#0F766E] to-[#D97706] bg-clip-text text-transparent">
                         Top Specialists
                     </span>
                 </h2>
