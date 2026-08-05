@@ -1,5 +1,6 @@
 import Banner from "@/components/shared/Banner";
 import HowItWorks from "@/components/shared/HowItsWorks";
+import Testimonials from "@/components/shared/Testimonials";
 import WhyChooseUs from "@/components/shared/WhyChooseUs";
 import RatedDoctor from "@/components/ui/RatedDoctor";
 
@@ -10,7 +11,7 @@ export default function Home() {
       <RatedDoctor></RatedDoctor>
       <WhyChooseUs></WhyChooseUs>
       <HowItWorks></HowItWorks>
-      <h2 className="text-4xl py-20 text-teal-700 flex justify-center font-bold">Welcome to the Doctor Appointment Manager</h2>
+      <Testimonials></Testimonials>
     </div>
   );
 }
