@@ -29,7 +29,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 px-6 bg-[#F8FAFC]">
+    <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#CCFBF1] mb-4">
