@@ -3,6 +3,7 @@ import React from 'react';
 
 const allAppointPage = async () => {
 
+  
   const res = await fetch("http://localhost:8080/appoint", {
     cache: "no-store"
   });
@@ -13,9 +14,9 @@ const allAppointPage = async () => {
     <>
       {/* all appoint er title */}
       <div className="my-6 text-center">
-        <p className="text-sm font-medium text-cyan-500 uppercase tracking-widest mb-1">My Bookings</p>
+        <p className="text-sm font-medium text-cyan-700 uppercase tracking-widest mb-1">My Bookings</p>
         <h1 className="text-3xl font-bold text-gray-800">
-          Your <span className="text-cyan-500">Appointments</span>
+          Your <span className="text-cyan-400">Appointments</span>
         </h1>
         <p className="text-gray-400 mt-2 text-sm">Track and manage all your scheduled visits</p>
       </div>

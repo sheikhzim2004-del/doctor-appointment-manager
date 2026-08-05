@@ -54,9 +54,9 @@ const AppointBookingPage = () => {
             <Toaster position="top-right" />
             {/* fomr er title */}
             <div className="mb-2 text-center">
-                <p className="text-sm font-medium text-cyan-500 uppercase tracking-widest mb-1">Healthcare Services</p>
+                <p className="text-sm font-medium text-cyan-700 uppercase tracking-widest mb-1">Healthcare Services</p>
                 <h1 className="text-3xl font-bold text-gray-800">
-                    Book an <span className="text-cyan-500">Appointment</span>
+                    Book an <span className="text-cyan-400">Appointment</span>
                 </h1>
                 <p className="text-gray-400 mt-2 text-sm">Schedule your visit with our experienced doctors</p>
             </div>

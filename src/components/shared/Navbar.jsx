@@ -1,10 +1,26 @@
+'use client'
+
+import { authClient } from '@/lib/auth-client';
+import { Avatar, Button } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-// import logo from "../../assets/logo.png";
 
 
 const Navbar = () => {
+
+  const {
+    data: session
+  } = authClient.useSession()
+
+  const user = session?.user;
+  console.log(user)
+
+  const handleLogout = async() => {
+    await authClient.signOut();
+  }
+
+
   return (
     <nav className="w-full bg-[#0F766E] border-b border-gray-200 px-6 py-2">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
@@ -23,10 +39,29 @@ const Navbar = () => {
         </div>
 
         {/* Auth Buttons */}
-        <div className="flex items-center gap-2">
-          <Link href={"/login"} className="border border-[#99F6E4]/70 text-white px-5 py-2 rounded-xl font-medium hover:bg-[#99F6E4] hover:text-[#0F766E] transition">Login</Link>
-          <Link href={"/register"} className="bg-[#F59E0B] text-white px-5 py-2 rounded-xl font-medium shadow-lg shadow-amber-500/20 hover:bg-[#D97706] transition">Register</Link>
-        </div>
+        <ul className="flex items-center gap-2">
+          <li>
+            <p className='text-white'>Profile</p>
+          </li>
+          {user ? <>
+            <li>
+              <Avatar>
+                <Avatar.Image alt="John Doe" src={user?.image} />
+                <Avatar.Fallback className='text-xl font-semibold'>{user?.name.charAt(0)}</Avatar.Fallback>
+              </Avatar>
+            </li>
+            <li>
+              <Button onClick={handleLogout} variant='danger' className={'rounded-xl '}>Logout</Button>
+            </li>
+          </> : <>
+            <li>
+              <Link href={"/login"} className="border border-[#99F6E4]/70 text-white px-5 py-2 rounded-xl font-medium hover:bg-[#99F6E4] hover:text-[#0F766E] transition">Login</Link>
+            </li>
+            <li>
+              <Link href={"/register"} className="bg-[#F59E0B] text-white px-5 py-2 rounded-xl font-medium shadow-lg shadow-amber-500/20 hover:bg-[#D97706] transition">Register</Link>
+            </li>
+          </>}
+        </ul>
 
       </div>
 

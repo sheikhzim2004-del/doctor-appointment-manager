@@ -24,7 +24,7 @@ export default function DoctorCard({ doctor }) {
 
     return (
         <>
-            <div className=" bg-white rounded-[24px] overflow-hidden border border-[#E2E8F0] font-sans">
+            <div className=" bg-white rounded-[24px] overflow-hidden border border-[#E2E8F0] font-sans transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-xl">
 
                 {/* Tall Gradient Header */}
                 <div
@@ -80,7 +80,7 @@ export default function DoctorCard({ doctor }) {
                 </div>
 
                 {/* Info Rows */}
-                <div className="px-4 flex flex-col gap-2">
+                <div className="px-4 flex gap-2">
                     <div className="flex items-center gap-2.5 bg-[#F8FAFC] rounded-[10px] px-3 py-2">
                         <div className="w-[30px] h-[30px] bg-[#F0FDFA] rounded-lg flex items-center justify-center flex-shrink-0">
                             <FiHome className="text-[#0F766E]" size={14} />

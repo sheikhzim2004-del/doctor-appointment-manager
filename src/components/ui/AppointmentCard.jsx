@@ -20,7 +20,7 @@ const AppointmentCard = ({ appointment }) => {
 
 
   return (
-    <div className="bg-white rounded-[20px] border border-[#E2E8F0] overflow-hidden w-full">
+    <div className="bg-white rounded-[20px] border border-[#E2E8F0] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500 hover:shadow-xl">
 
       {/* Header */}
       <div className="bg-[#0F766E] px-7 py-5 relative overflow-hidden">
