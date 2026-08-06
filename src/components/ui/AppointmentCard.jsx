@@ -1,4 +1,4 @@
-import { FiEdit2, FiX, FiUser, FiMail, FiPhone, FiCalendar, FiClock, FiArrowRight, FiCheckCircle } from "react-icons/fi";
+import {  FiUser, FiMail, FiPhone, FiCalendar, FiClock, FiArrowRight, FiCheckCircle } from "react-icons/fi";
 import { IoMaleOutline } from "react-icons/io5";
 import UpdateModal from "./UpdateModal";
 import DeleteDialog from "./DeleteDialog";

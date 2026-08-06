@@ -1,10 +1,21 @@
 import AppointmentCard from '@/components/ui/AppointmentCard';
+import { auth } from '@/lib/auth';
+import { headers } from 'next/headers';
 import React from 'react';
 
 const allAppointPage = async () => {
 
+   //get token
+      const {token} =await auth.api.getToken({
+          headers: await headers()
+      })
+      console.log(token)
+
   
   const res = await fetch("http://localhost:8080/appoint", {
+    headers: {
+      authorization: `Bearer ${token}`
+    },
     cache: "no-store"
   });
   const appoints = await res.json();

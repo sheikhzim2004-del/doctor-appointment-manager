@@ -1,4 +1,5 @@
 "use client"
+import { authClient } from '@/lib/auth-client';
 import { Button, FieldError, Input, Label, ListBox, Modal, Surface, TextField, Select } from '@heroui/react';
 import { EditIcon } from 'lucide-react';
 import { redirect } from 'next/navigation';
@@ -17,15 +18,20 @@ const UpdateModal = ({ appointment }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
+        console.log(e.currentTarget)
+
+        //get token
+        const {data: tokenData} = await authClient.token()
+
         const appointment = Object.fromEntries(formData.entries());
-        console.log("appoint data:", appointment)
 
         // setLoading(true);
         try {
             const res = await fetch(`http://localhost:8080/appoint/${_id}`, {
                 method: "PATCH",
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    authorization: `Berear ${tokenData?.token}`
                 },
                 body: JSON.stringify(appointment)
             })

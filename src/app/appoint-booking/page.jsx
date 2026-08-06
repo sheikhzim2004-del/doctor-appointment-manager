@@ -1,5 +1,6 @@
 "use client"
 
+import { authClient } from '@/lib/auth-client';
 import { FieldError, Input, Label, TextField, Select, ListBox, Button } from '@heroui/react';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -30,15 +31,20 @@ const AppointBookingPage = () => {
 
         setLoading(true);
         try {
+            //get token
+            const {data: tokenData} =await authClient.token()
+            console.log(tokenData)
+            
             const res = await fetch("http://localhost:8080/appoint", {
                 method: "POST",
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${tokenData?.token}`
                 },
                 body: JSON.stringify(appointment)
             })
             const data = await res.json()
-            console.log(data, 'data')
+            // console.log(data, 'data')
 
             toast.success('Appointment booked successfully!');
             e.target.reset();

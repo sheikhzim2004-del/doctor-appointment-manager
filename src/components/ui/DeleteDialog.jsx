@@ -1,4 +1,5 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import { AlertDialog, Button } from '@heroui/react';
 import { redirect } from 'next/navigation';
 import React from 'react';
@@ -8,13 +9,16 @@ import { toast } from 'react-toastify';
 const DeleteDialog = ({ appointment }) => {
     const {_id, patientName, doctorName, appointmentDate } = appointment;
 
+    
     const onSubmit = async(e) =>{
         e.preventDefault()
+        const {data: tokenData} = await authClient.token()
 
         const res =await fetch(`http://localhost:8080/appoint/${_id}`, {
             method: "DELETE",
             headers: {
-                "content-type": "application/json"
+                "content-type": "application/json",
+                authorization: `Bearer ${tokenData?.token}`
             },
         })
         const data = await res.json();
