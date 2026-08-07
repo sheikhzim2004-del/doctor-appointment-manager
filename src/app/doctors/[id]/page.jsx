@@ -14,7 +14,7 @@ const DoctorDetailsPage = async ({ params }) => {
 
     // console.log("Id", id)
 
-    const res = await fetch(`http://localhost:8080/doctors/${id}`,{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVERURL}/doctors/${id}`,{
         headers: {
             authorization: `Bearer ${token}`
         },

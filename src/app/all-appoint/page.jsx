@@ -12,7 +12,7 @@ const allAppointPage = async () => {
       console.log(token)
 
   
-  const res = await fetch("http://localhost:8080/appoint", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVERURL}/appoint`, {
     headers: {
       authorization: `Bearer ${token}`
     },

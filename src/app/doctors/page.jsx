@@ -3,7 +3,7 @@ import React from 'react';
 
 const DoctorsPage = async () => {
 
-  const res = await fetch("http://localhost:8080/doctors", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVERURL}/doctors`, {
     cache: "no-store"
   })
 

@@ -34,8 +34,8 @@ const AppointBookingPage = () => {
             //get token
             const {data: tokenData} =await authClient.token()
             console.log(tokenData)
-            
-            const res = await fetch("http://localhost:8080/appoint", {
+
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVERURL}/appoint`, {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json',

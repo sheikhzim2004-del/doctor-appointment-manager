@@ -27,7 +27,7 @@ const UpdateModal = ({ appointment }) => {
 
         // setLoading(true);
         try {
-            const res = await fetch(`http://localhost:8080/appoint/${_id}`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVERURL}/appoint/${_id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': 'application/json',

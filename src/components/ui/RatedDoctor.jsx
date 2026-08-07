@@ -3,11 +3,19 @@ import DoctorCard from './DoctorCard';
 
 const RatedDoctor = async () => {
 
-    const res = await fetch('http://localhost:8080/doctors')
-    const doctors = await res.json();
+    let topThreeDoctors = [];
 
-    const sortedDoctors = [...doctors].sort((a, b) => b.rating - a.rating);
-    const topThreeDoctors = sortedDoctors.slice(0, 3);
+    try{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVERURL}/doctors`, {
+            cache: 'no-store'
+        })
+        const doctors = await res.json();
+    
+        const sortedDoctors = [...doctors].sort((a, b) => b.rating - a.rating);
+        topThreeDoctors = sortedDoctors.slice(0, 3);
+    } catch (err){
+        topThreeDoctors = [];
+    }
 
 
     return (

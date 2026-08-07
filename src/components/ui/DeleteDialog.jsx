@@ -14,7 +14,7 @@ const DeleteDialog = ({ appointment }) => {
         e.preventDefault()
         const {data: tokenData} = await authClient.token()
 
-        const res =await fetch(`http://localhost:8080/appoint/${_id}`, {
+        const res =await fetch(`${process.env.NEXT_PUBLIC_SERVERURL}/appoint/${_id}`, {
             method: "DELETE",
             headers: {
                 "content-type": "application/json",
