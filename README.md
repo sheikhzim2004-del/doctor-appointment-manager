@@ -50,5 +50,5 @@ To run this project on your local machine, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone [https://github.com/your-username/docappoint-client.git](https://github.com/your-username/docappoint-client.git)
+   git clone https://github.com/sheikhzim2004-del/doctor-appointment-manager
    cd docappoint-client
