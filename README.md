@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🩺 DocAppoint — Doctor Appointment Management System
 
-## Getting Started
+![DocAppoint Banner](https://i.ibb.co/your-screenshot-link-here.png)
 
-First, run the development server:
+**DocAppoint** is a full-stack, responsive healthcare management platform that allows patients to seamlessly discover top-rated medical specialists, view dynamic doctor details, and book appointments easily. Featuring secure authentication, a custom search system, and an interactive personal dashboard, DocAppoint optimizes the modern doctor-patient booking experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔗 Quick Links
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- 🌐 **Live Website:** [Visit Live Site](https://doctor-appointment-manager-rose.vercel.app)
+- 🖥️ **Server Repository:** [GitHub Server Repo](https://github.com/sheikhzim2004-del/doctor-appointment-manager-server)
+- 💻 **Client Repository:** [GitHub Client Repo](https://github.com/sheikhzim2004-del/doctor-appointment-manager)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- **🔒 Secure Authentication & JWT Persistence:** Session management using Better Auth with JWT/session handling, including smooth single-click Social Login (Google/GitHub). Reloading private routes or protected pages keeps the session intact without forced redirects.
+- **🔍 Dynamic Doctor Search & Browsing:** Real-time appointment and doctor search functionality on the "All Appointments" page, alongside a top-rated specialists showcase on the homepage.
+- **📅 Interactive Appointment Booking:** Instant dynamic booking modal with custom form validations. All bookings are safely managed and persisted in a MongoDB database.
+- **📊 Real-time Dashboard (CRUD Operations):** Personalized user portal containing **"My Bookings"** (with live UI update modals for editing and instant deletion) and **"My Profile"** dynamic updates without page refreshes.
+- **🎨 Modern UI & Fully Responsive Design:** Custom toast notifications (zero default browser alerts), zero *Lorem Ipsum* dummy text, smooth Swiper.js hero banner, custom 404 page, page-specific SEO metadata, and a dynamic Light/Dark theme toggle.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack & Libraries
 
-## Deploy on Vercel
+### **Frontend**
+- **Framework:** React / Next.js
+- **Styling:** Tailwind CSS, Custom Components (UIverse, CSS Icons)
+- **Sliders & Toast Notifications:** Swiper.js, React Hot Toast / SweetAlert2
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **Backend & Database**
+- **Runtime Environment:** Node.js & Express.js
+- **Database:** MongoDB
+- **Authentication:** Better Auth (JWT / Session)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🚀 Local Installation & Setup Guide
+
+To run this project on your local machine, follow these steps:
+
+### Prerequisites
+- Node.js installed (v18 or higher)
+- npm or yarn
+
+### Steps
+
+1. **Clone the Repository:**
+   ```bash
+   git clone [https://github.com/your-username/docappoint-client.git](https://github.com/your-username/docappoint-client.git)
+   cd docappoint-client
